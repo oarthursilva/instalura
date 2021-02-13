@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import get from 'loadsh/get';
-import { TextStyleVariantMap } from '../../foundation/Text';
+import { TextStyleVariantMap } from '../../foundation/Text/styles';
 
 const buttonGhost = css`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
