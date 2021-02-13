@@ -9,6 +9,7 @@
     "lint:fix": "eslint ./ --fix"
   },
   "dependencies": {
+    "loadsh": "^0.0.4",
     "next": "latest",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
