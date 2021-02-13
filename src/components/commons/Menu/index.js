@@ -3,23 +3,23 @@ import React from 'react';
 import { Logo } from '../../../theme/Logo';
 
 import { Button } from '../Button';
+import { Text } from '../../foundation/Text';
 
 import { MenuWrapper } from './styles';
 
 export default function Menu() {
-
   const links = [
     {
       text: 'Home',
-      url: '/'
+      url: '/',
     },
     {
       text: 'Perguntas frequentes',
-      url: '/faq'
+      url: '/faq',
     },
     {
       text: 'Sobre',
-      url: '/sobre'
+      url: '/sobre',
     },
   ];
 
@@ -30,13 +30,13 @@ export default function Menu() {
       </MenuWrapper.LeftSide>
 
       <MenuWrapper.CentralSide>
-        {links.map((link) => {
-          return (
-            <li key={link.url}>
-              <a href={link.url} target="_blank">{link.text}</a>
-            </li>
-          )
-        })}
+        {links.map((link) => (
+          <li key={link.url}>
+            <Text variant="smallestException" tag="a" href={link.url}>
+              {link.text}
+            </Text>
+          </li>
+        ))}
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.RightSide>
