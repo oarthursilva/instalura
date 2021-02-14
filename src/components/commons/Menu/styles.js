@@ -9,7 +9,8 @@ export const MenuWrapper = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 18px;
-  padding: 0 28px; // shorthand for padding-left and padding-right
+  padding-left: 28px;
+  padding-right: 28px;
   ${breakpointsMedia({
   md: css`
       justify-content: flex-start;
@@ -17,7 +18,7 @@ export const MenuWrapper = styled.nav`
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      padding 0 16px;
+      padding: 0 16px;
       max-width: 768px;
     `,
   lg: css`
@@ -25,8 +26,8 @@ export const MenuWrapper = styled.nav`
     `,
   xl: css`
       max-width: 1222px;
-    `
-})}
+    `,
+  })}
 `;
 
 MenuWrapper.LeftSide = styled.div`
@@ -38,10 +39,12 @@ MenuWrapper.LeftSide = styled.div`
       width: 131px;
       height: 32px;
     `,
+})}
+  ${breakpointsMedia({
   md: css`
       order: initial;
       padding-right: 16px;
-    `
+    `,
 })}
 `;
 
@@ -69,28 +72,28 @@ MenuWrapper.CentralSide = styled.div`
       margin: 0;
       padding-top: 0;
       padding-bottom: 0;
-    `
+    `,
 })}
-
   a {
     text-align: center;
     display: block;
     text-decoration: none;
     color: #88989E;
     transition: ${({ theme }) => theme.transition};
-    &:hover,
-    &:focus {
-        font-weight: 500;
-        color: #070C0E;
-    }
     ${breakpointsMedia({
   xs: css`
-        ${(TextStyleVariantMap.smallestException)}
-      `,
+        ${TextStyleVariantMap.smallestException}
+    `,
   md: css`
-        ${(TextStyleVariantMap.paragraph1)}
-      `
+      ${TextStyleVariantMap.paragraph1}
+    `,
 })}
+    &:hover,
+    &:focus {
+      font-weight: 500;
+      color: #070C0E;
+      
+    }
   }
 `;
 
@@ -104,6 +107,6 @@ MenuWrapper.RightSide = styled.div`
   ${breakpointsMedia({
   md: css`
       order: initial;
-    `
+    `,
 })}
 `;
