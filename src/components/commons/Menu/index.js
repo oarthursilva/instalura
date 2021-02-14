@@ -7,7 +7,7 @@ import { Text } from '../../foundation/Text';
 
 import { MenuWrapper } from './styles';
 
-export default function Menu() {
+export function Menu() {
   const links = [
     {
       text: 'Home',

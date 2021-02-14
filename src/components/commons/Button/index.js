@@ -4,6 +4,8 @@ import get from 'loadsh/get';
 import { TextStyleVariantMap } from '../../foundation/Text/styles';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
+import { propToStyle } from '../../../theme/utils/propToStyle';
+
 const buttonGhost = css`
   color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
   background: transparent;
@@ -27,12 +29,15 @@ export const Button = styled.button`
     opacity: .8
   }
 
+  ${propToStyle('margin')}
+  ${propToStyle('display')}
+
   ${breakpointsMedia({
-    xs: css`
+  xs: css`
       ${(TextStyleVariantMap.smallestException)}
     `,
-    md: css`
+  md: css`
       ${(TextStyleVariantMap.paragraph1)}
     `,
-  })}
+})}
 `;

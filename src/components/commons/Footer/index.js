@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FooterWrapper } from './style';
 
-export default function Footer(props) {
+export function Footer(props) {
   return (
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
