@@ -16,7 +16,7 @@ export function Text({ tag, variant, children, ...props }) {
 
 Text.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['paragraph1', 'paragraph2', 'smallestException']),
+  variant: PropTypes.oneOf(['title', 'paragraph1', 'paragraph2', 'smallestException']),
   children: PropTypes.node.isRequired
 }
 
