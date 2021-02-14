@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import get from 'loadsh/get';
 
 import { propToStyle } from '../../../theme/utils/propToStyle';
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
 const paragraph1 = css`
   ${({ theme }) => css`
