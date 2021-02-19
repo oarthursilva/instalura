@@ -3,33 +3,32 @@ import { breakpointsMedia } from './breakpointsMedia';
 
 export function propToStyle(propName) {
   return (props) => {
-
-    const propValue = props[propName]; // string or object
-
-    if (typeof propValue === 'string') {
-      return {
-        [propName]: props[propName]
-      }
-    }
+    const propValue = props[propName];
 
     if (typeof propValue === 'object') {
-      return breakpointsMedia({
-        xs: {
-          [propName]: propValue.xs
-        },
-        sm: {
-          [propName]: propValue.sm
-        },
-        md: {
-          [propName]: propValue.md
-        },
-        lg: {
-          [propName]: propValue.lg
-        },
-        xl: {
-          [propName]: propValue.xl
-        }
-      });
+      return css`
+        ${breakpointsMedia({
+        ...(propValue.xs && {
+          xs: { [propName]: propValue.xs },
+        }),
+        ...(propValue.sm && {
+          sm: { [propName]: propValue.sm },
+        }),
+        ...(propValue.md && {
+          md: { [propName]: propValue.md },
+        }),
+        ...(propValue.lg && {
+          lg: { [propName]: propValue.lg },
+        }),
+        ...(propValue.xl && {
+          xl: { [propName]: propValue.xl },
+        }),
+      })}
+      `;
+    }
+
+    return {
+      [propName]: props[propName],
     };
-  }
+  };
 }
