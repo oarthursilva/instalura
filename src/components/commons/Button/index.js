@@ -18,7 +18,7 @@ const buttonDefault = css`
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
-  padding: 12px 42px;
+  padding: 12px 26px;
   opacity: 1;
   transition: ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
