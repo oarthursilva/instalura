@@ -14,7 +14,7 @@ export function Menu() {
       url: '/',
     },
     {
-      text: 'Perguntas frequentes',
+      text: 'Perguntas Frequentes',
       url: '/faq',
     },
     {
