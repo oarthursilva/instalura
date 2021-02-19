@@ -1,7 +1,11 @@
+/* eslint-disable import/prefer-default-export */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { TextBase } from './styles';
-export function Text({ tag, variant, children, ...props }) {
+
+export function Text({
+  tag, variant, children, ...props
+}) {
   return (
     <TextBase
       as={tag}
@@ -17,10 +21,10 @@ export function Text({ tag, variant, children, ...props }) {
 Text.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
   variant: PropTypes.oneOf(['title', 'paragraph1', 'paragraph2', 'smallestException']),
-  children: PropTypes.node.isRequired
-}
+  children: PropTypes.node.isRequired,
+};
 
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
-}
+};

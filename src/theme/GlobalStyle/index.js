@@ -25,6 +25,6 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column
   }
-`
+`;
 
 export default GlobalStyle;

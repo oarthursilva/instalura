@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import get from 'loadsh/get';
+import get from 'lodash/get';
 
 import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
@@ -26,20 +26,20 @@ const title = css`
     line-height: ${theme.typographyVariants.titleXS.lineHeight};
   `}
   ${breakpointsMedia({
-  md: css`
+    md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.title.fontSize};
         font-weight: ${theme.typographyVariants.title.fontWeight};
         line-height: ${theme.typographyVariants.title.lineHeight};
       `}
     `,
-})}
+  })}
 `;
 
 export const TextStyleVariantMap = {
   smallestException,
   paragraph1,
-  title
+  title,
 };
 
 export const TextBase = styled.span`

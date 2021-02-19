@@ -1,5 +1,6 @@
+/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
-import get from 'loadsh/get';
+import get from 'lodash/get';
 
 import { TextStyleVariantMap } from '../../foundation/Text/styles';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
@@ -23,7 +24,7 @@ export const Button = styled.button`
   transition: ${({ theme }) => theme.transition};
   border-radius: ${({ theme }) => theme.borderRadius};
 
-  ${({ ghost }) => ghost ? buttonGhost : buttonDefault}
+  ${({ ghost }) => (ghost ? buttonGhost : buttonDefault)}
   &:hover,
   &:focus {
     opacity: .8
@@ -33,11 +34,11 @@ export const Button = styled.button`
   ${propToStyle('display')}
 
   ${breakpointsMedia({
-  xs: css`
+    xs: css`
       ${(TextStyleVariantMap.smallestException)}
     `,
-  md: css`
+    md: css`
       ${(TextStyleVariantMap.paragraph1)}
     `,
-})}
+  })}
 `;

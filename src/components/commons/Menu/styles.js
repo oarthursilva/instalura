@@ -1,5 +1,6 @@
+/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia'
+import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 import { TextStyleVariantMap } from '../../foundation/Text/styles';
 
 export const MenuWrapper = styled.nav`
@@ -12,7 +13,7 @@ export const MenuWrapper = styled.nav`
   padding-left: 28px;
   padding-right: 28px;
   ${breakpointsMedia({
-  md: css`
+    md: css`
       justify-content: flex-start;
       margin-top: 32px;
       margin-left: auto;
@@ -21,10 +22,10 @@ export const MenuWrapper = styled.nav`
       padding: 0 16px;
       max-width: 768px;
     `,
-  lg: css`
+    lg: css`
       max-width: 1160px;
     `,
-  xl: css`
+    xl: css`
       max-width: 1222px;
     `,
   })}
@@ -35,17 +36,17 @@ MenuWrapper.LeftSide = styled.div`
   margin: 0;
   order: 1;
   ${breakpointsMedia({
-  md: css`
+    md: css`
       width: 131px;
       height: 32px;
     `,
-})}
+  })}
   ${breakpointsMedia({
-  md: css`
+    md: css`
       order: initial;
       padding-right: 16px;
     `,
-})}
+  })}
 `;
 
 MenuWrapper.CentralSide = styled.div`
@@ -63,7 +64,7 @@ MenuWrapper.CentralSide = styled.div`
   padding: 12px;
     
   ${breakpointsMedia({
-  md: css`
+    md: css`
       max-width: 332px;
       justify-content: space-between;
       flex: 1;
@@ -73,7 +74,7 @@ MenuWrapper.CentralSide = styled.div`
       padding-top: 0;
       padding-bottom: 0;
     `,
-})}
+  })}
   a {
     text-align: center;
     display: block;
@@ -81,13 +82,13 @@ MenuWrapper.CentralSide = styled.div`
     color: #88989E;
     transition: ${({ theme }) => theme.transition};
     ${breakpointsMedia({
-  xs: css`
+    xs: css`
         ${TextStyleVariantMap.smallestException}
     `,
-  md: css`
+    md: css`
       ${TextStyleVariantMap.paragraph1}
     `,
-})}
+  })}
     &:hover,
     &:focus {
       font-weight: 500;
@@ -105,8 +106,8 @@ MenuWrapper.RightSide = styled.div`
   order: 2;
   justify-content: flex-end;
   ${breakpointsMedia({
-  md: css`
+    md: css`
       order: initial;
     `,
-})}
+  })}
 `;
