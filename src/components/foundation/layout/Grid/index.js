@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
 
 import { propToStyle } from '../../../../theme/utils/propToStyle';
@@ -70,17 +69,17 @@ export const Grid = {
       }),
       ...(offset?.sm && {
         sm: css`
-            margin-left: ${(100 * offset.sm) / 12}%;
+          margin-left: ${(100 * offset.sm) / 12}%;
         `,
       }),
       ...(offset?.md && {
         md: css`
-            margin-left: ${(100 * offset.md) / 12}%;
-            `,
+          margin-left: ${(100 * offset.md) / 12}%;
+          `,
       }),
       ...(offset?.lg && {
         lg: css`
-            margin-left: ${(100 * offset.lg) / 12}%;
+          margin-left: ${(100 * offset.lg) / 12}%;
         `,
       }),
       ...(offset?.xl && {

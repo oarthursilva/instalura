@@ -33,14 +33,13 @@ export default function Home() {
 
         <Row>
           <Col
-            offset={{ xs: 0, md: 1 }}
-            value={{ xs: 12, md: 5 }}
+            offset={{ xs: 0, md: 0 }}
+            value={{ xs: 12, md: 6 }}
             display="flex"
             alignItems="flex-start"
             justifyContent="center"
             flexDirection="column"
           >
-
             <Text
               variant="title"
               tag="h1"

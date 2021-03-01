@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 
