@@ -25,32 +25,30 @@ export default function Home() {
     >
 
       {/*
-        [SOLID]
+        [ SOLID ]
         S = single responsability
         O = open closed
         L = ???
         I = interface segregation
         D = dependency inversion
       */}
-      {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        >
-          {(props) => (
-            <Box
-              backgroundColor="white"
-              // eslint-disable-next-line react/jsx-props-no-spreading
-              {...props}
-            >
-              <div>
-                Modal
-              </div>
-            </Box>
-          )}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        {(props) => (
+          <Box
+            backgroundColor="white"
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...props}
+          >
+            <div>
+              modal content goes here
+            </div>
+          </Box>
+        )}
 
-        </Modal>
-      )}
+      </Modal>
 
       <Menu />
 
