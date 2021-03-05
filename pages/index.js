@@ -7,6 +7,7 @@ import { Modal } from '../src/components/commons/Modal';
 import { Box } from '../src/components/foundation/layout/Container';
 import { Grid } from '../src/components/foundation/layout/Grid';
 import { Text } from '../src/components/foundation/Text';
+import { FormRegister } from '../src/components/pattern/FormRegister';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,15 +38,7 @@ export default function Home() {
         onClose={() => setIsModalOpen(false)}
       >
         {(props) => (
-          <Box
-            backgroundColor="white"
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            {...props}
-          >
-            <div>
-              modal content goes here
-            </div>
-          </Box>
+          <FormRegister props={props} />
         )}
 
       </Modal>
@@ -58,7 +51,6 @@ export default function Home() {
           md: 'auto',
         }}
       >
-
         <Row>
           <Col
             offset={{ xs: 0, md: 0 }}
