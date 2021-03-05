@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Lottie } from '@crello/react-lottie';
 
 import { Button } from '../../commons/Button';
 
@@ -8,8 +9,20 @@ import { Grid } from '../../foundation/layout/Grid';
 
 import { TextField } from '../../forms/TextField';
 
+import successAnimation from '../animations/success.json';
+import errorAnimation from '../animations/error.json';
+
+const formState = {
+  DEFAULT: 'DEFAULT',
+  LOADING: 'LOADING',
+  DONE: 'DONE',
+  ERROR: 'ERROR',
+};
+
 function FormContent() {
-  const [userInfo, setUserInfo] = useState({ email: '', user: '' });
+  const [userInfo, setUserInfo] = useState({ name: '', user: '' });
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(formState.DEFAULT);
 
   function handleInputChange(e) {
     const fieldName = e.target.getAttribute('name');
@@ -19,11 +32,46 @@ function FormContent() {
     });
   }
 
-  const isFormInValid = userInfo.email.length === 0 || userInfo.user.length === 0;
+  const isFormInValid = userInfo.name.length === 0 || userInfo.user.length === 0;
 
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
+
+      setIsFormSubmitted(true);
+      setSubmitStatus(formState.DEFAULT);
+
+      // DTO
+      const userDTO = {
+        username: userInfo.user,
+        name: userInfo.name,
+      };
+
+      fetch('https://instalura-api.vercel.app/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userDTO),
+      })
+        .then((response) => {
+          // eslint-disable-next-line no-console
+          console.log(response);
+          if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Server not reachable');
+        })
+        .then((data) => {
+          setSubmitStatus(formState.DONE);
+          // eslint-disable-next-line no-console
+          console.log('response from server:', data);
+        })
+        .catch((error) => {
+          setSubmitStatus(formState.ERROR);
+          // eslint-disable-next-line no-console
+          console.error(error);
+        });
     }}
     >
       <Text
@@ -44,12 +92,11 @@ function FormContent() {
         rolando no bairro, complete seu cadastro agora!
       </Text>
 
-
       <div>
         <TextField
-          placeholder="E-mail"
-          name="email"
-          value={userInfo.email}
+          placeholder="Nome"
+          name="name"
+          value={userInfo.name}
           onChange={handleInputChange}
         />
       </div>
@@ -71,6 +118,34 @@ function FormContent() {
       >
         Cadastrar
       </Button>
+
+      {isFormSubmitted && submitStatus === formState.DONE && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            className="lottie-container basic"
+            config={{ animationData: successAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
+      )}
+
+      {isFormSubmitted && submitStatus === formState.ERROR && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            className="lottie-container basic"
+            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
+      )}
     </form>
   );
 }
@@ -90,7 +165,6 @@ export function FormRegister({ props }) {
         paddingRight={{ md: '0' }}
         value={{ xs: 12, md: 5, lg: 4 }}
       >
-
         <Box
           flex={1}
           display="flex"
