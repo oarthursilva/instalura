@@ -26,14 +26,14 @@ const title = css`
     line-height: ${theme.typographyVariants.titleXS.lineHeight};
   `}
   ${breakpointsMedia({
-    md: css`
+  md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.title.fontSize};
         font-weight: ${theme.typographyVariants.title.fontWeight};
         line-height: ${theme.typographyVariants.title.lineHeight};
       `}
     `,
-  })}
+})}
 `;
 
 export const TextStyleVariantMap = {
@@ -43,12 +43,11 @@ export const TextStyleVariantMap = {
 };
 
 export const TextBase = styled.span`
-  /* ${({ theme, variant }) => get(theme, `typographyVariants.${variant}`)}; */
-
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
 
-  ${({ variant }) => TextStyleVariantMap[variant]}
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+
+  ${({ variant }) => TextStyleVariantMap[variant]}
 `;
