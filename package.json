@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "commit": "cz",
-    "lint:fix": "eslint ./ --fix"
+    "lint:fix": "eslint ./ --fix",
+    "lint": "eslint --ignore-path .gitignore .",
+    "custom-scripts": "node ./scripts/test.js"
   },
   "dependencies": {
     "@crello/react-lottie": "^0.0.11",
@@ -28,7 +30,8 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0"
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "shelljs": "^0.8.4"
   },
   "license": "MIT",
   "config": {
