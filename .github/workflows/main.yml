@@ -32,6 +32,8 @@ jobs:
         run: node -v
 
       # Runs a single command using the runners shell
+      - name: Install project dependencies
+        run: yarn install
       - name: Run Linter (eslint)
         run: yarn lint
 
