@@ -5,5 +5,4 @@ if [ -t 1 ]; then
   exec < /dev/tty
 fi
 
-echo "running lint"
 yarn lint
