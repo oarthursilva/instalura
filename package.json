@@ -1,5 +1,5 @@
 {
-  "name": "with-styled-components",
+  "name": "instalura-afuscella",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -23,6 +23,8 @@
     "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
     "babel-plugin-styled-components": "^1.8.0",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^7.20.0",
@@ -41,7 +43,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn lint"
+      "pre-push": "yarn lint",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "license": "MIT"
