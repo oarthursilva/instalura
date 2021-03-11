@@ -10,7 +10,6 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   lint:
     name: Lint
     # The type of runner that the job will run on
@@ -21,8 +20,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2.3.4
-        with:
-          fetch-depth: 0  
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v1
@@ -41,8 +38,25 @@ jobs:
       - name: Run Linter (eslint)
         run: yarn lint
 
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+  
+  sonarcloud:
+    name: Sonar Cloud
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+        with:
+          # Disabling shallow clone is recommended for improving relevancy of reporting
+          fetch-depth: 0
+
       # Run SonarCloud scan for static code check
-      - name: SonarCloud Scan
+      - name: Scan
         uses: SonarSource/sonarcloud-github-action@v1.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -50,9 +64,3 @@ jobs:
         with:
           args: >
             -Dsonar.verbose=true
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
