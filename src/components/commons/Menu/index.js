@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import { Logo } from '../../../theme/Logo';
 
 import { Button } from '../Button';
@@ -33,17 +32,15 @@ export function Menu({ onRegisterClick }) {
       <MenuWrapper.CentralSide>
         {links.map((link) => (
           <li key={link.url}>
-            <Link href={link.url}>
-              <Text variant="smallestException" tag="a" href={link.url}>
-                {link.text}
-              </Text>
-            </Link>
+            <Text variant="smallestException" tag="a" href={link.url}>
+              {link.text}
+            </Text>
           </li>
         ))}
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main" href="app/login">
+        <Button ghost variant="secondary.main" href="/app/login">
           Entrar
         </Button>
 
