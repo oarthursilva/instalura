@@ -40,10 +40,11 @@ export default function Home() {
         {(props) => (
           <FormRegister props={props} />
         )}
-
       </Modal>
 
-      <Menu />
+      <Menu
+        onRegisterClick={() => setIsModalOpen(!isModalOpen)}
+      />
 
       <Container
         marginTop={{
