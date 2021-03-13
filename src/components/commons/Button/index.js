@@ -1,6 +1,9 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import get from 'lodash/get';
 
+import { Link } from '../Link';
 import { TextStyleVariantMap } from '../../foundation/Text/styles';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
 
@@ -15,7 +18,7 @@ const buttonDefault = css`
   background-color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)};
 `;
 
-export const Button = styled.button`
+const ButtonBase = styled.button`
   border: 0;
   cursor: pointer;
   padding: 12px 26px;
@@ -42,11 +45,37 @@ export const Button = styled.button`
   ${propToStyle('display')}
 
   ${breakpointsMedia({
-    xs: css`
+  xs: css`
       ${(TextStyleVariantMap.smallestException)}
     `,
-    md: css`
+  md: css`
       ${(TextStyleVariantMap.paragraph1)}
     `,
-  })}
+})}
 `;
+
+export function Button({ href, children, ...props }) {
+  const hasHref = Boolean(href);
+  const componentTag = hasHref ? Link : 'button';
+
+  return (
+    <ButtonBase
+      as={componentTag}
+      href={href}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+    >
+      {children}
+
+    </ButtonBase>
+  );
+}
+
+Button.propTypes = {
+  href: PropTypes.string,
+  children: PropTypes.node.isRequired,
+};
+
+Button.defaultProps = {
+  href: undefined,
+};
