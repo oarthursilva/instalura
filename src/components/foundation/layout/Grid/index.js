@@ -11,6 +11,7 @@ export const Grid = {
     margin-right: auto;
     margin-left: auto;
    
+    ${propToStyle('flex')}
     ${propToStyle('marginTop')}
 
     ${breakpointsMedia({
@@ -41,10 +42,14 @@ export const Grid = {
     margin-right: -16px;
 
     ${propToStyle('flex')}
+    ${propToStyle('flexDirection')}
     ${propToStyle('justifyContent')}
 
     ${propToStyle('marginLeft')}    
     ${propToStyle('marginRight')}
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
+
   `,
 
   Col: styled.div`
@@ -59,6 +64,7 @@ export const Grid = {
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
+    ${propToStyle('order')}
 
     ${propToStyle('marginTop')}
     ${propToStyle('paddingRight')}
