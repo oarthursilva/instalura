@@ -45,13 +45,13 @@ const ButtonBase = styled.button`
   ${propToStyle('display')}
 
   ${breakpointsMedia({
-  xs: css`
+    xs: css`
       ${(TextStyleVariantMap.smallestException)}
     `,
-  md: css`
+    md: css`
       ${(TextStyleVariantMap.paragraph1)}
     `,
-})}
+  })}
 `;
 
 export function Button({ href, children, ...props }) {
