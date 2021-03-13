@@ -7,23 +7,13 @@ import { TextBase } from './styles';
 export function Text({
   tag, variant, href, children, ...props
 }) {
-  if (href) {
-    return (
-      <TextBase
-        as={Link}
-        variant={variant}
-        href={href}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...props}
-      >
-        {children}
-      </TextBase>
-    );
-  }
+  const hasHref = Boolean(href);
+  const componentTag = hasHref ? Link : tag;
 
   return (
     <TextBase
-      as={tag}
+      as={componentTag}
+      href={href}
       variant={variant}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
@@ -35,7 +25,7 @@ export function Text({
 
 Text.propTypes = {
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span', 'input']),
-  variant: PropTypes.oneOf(['title', 'paragraph1', 'paragraph2', 'smallestException']),
+  variant: PropTypes.oneOf(['title', 'subTitle', 'paragraph1', 'paragraph2', 'smallestException']),
   href: PropTypes.string,
   children: PropTypes.node,
 };
@@ -43,6 +33,6 @@ Text.propTypes = {
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
-  href: '',
+  href: undefined,
   children: null,
 };

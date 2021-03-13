@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Text } from '../../foundation/Text';
 import { Box } from '../../foundation/layout/Container';
 import { Grid } from '../../foundation/layout/Grid';
-import { Menu } from '../../commons/Menu';
 import { Footer } from '../../commons/Footer';
+import { Menu } from '../../commons/Menu';
 import { Modal } from '../../commons/Modal';
 import { FormRegister } from '../../pattern/FormRegister';
 
 export default function FAQScreen({ faqCategories }) {
-  const [isModalOpen, setModalState] = React.useState(false);
+  const [isModalOpen, setModalState] = useState(false);
 
   return (
     <Box
-      flex="1"
+      flex={1}
       display="flex"
       flexDirection="column"
     >
