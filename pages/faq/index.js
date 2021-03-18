@@ -1,12 +1,17 @@
 import React from 'react';
+import WebsitePageWrapper from '../../src/components/wrapper/WebsitePage';
 import FAQScreen from '../../src/components/screen/FAQScreen';
 
 // eslint-disable-next-line react/prop-types
 export default function FAQPage({ faqCategories }) {
   return (
-    <FAQScreen
-      faqCategories={faqCategories}
-    />
+    <WebsitePageWrapper
+      seoProps={{ headerTitle: 'FAQ' }}
+    >
+      <FAQScreen
+        faqCategories={faqCategories}
+      />
+    </WebsitePageWrapper>
   );
 }
 
