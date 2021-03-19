@@ -1,14 +1,10 @@
-import React from 'react';
-
 import HomeScreen from '../src/components/screen/HomeScreen';
-import WebsitePageWrapper from '../src/components/wrapper/WebsitePage';
+import { websitePageHOC } from '../src/components/wrapper/WebsitePage/hoc';
 
-export default function Home() {
-  return (
-    <WebsitePageWrapper
-      seoProps={{ headerTitle: 'Home' }}
-    >
-      <HomeScreen />
-    </WebsitePageWrapper>
-  );
-}
+export default websitePageHOC(HomeScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headerTitle: 'Home',
+    },
+  },
+});

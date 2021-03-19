@@ -1,13 +1,10 @@
-import React from 'react';
-import WebsitePageWrapper from '../../src/components/wrapper/WebsitePage';
 import AboutScreen from '../../src/components/screen/AboutScreen';
+import { websitePageHOC } from '../../src/components/wrapper/WebsitePage/hoc';
 
-export default function About() {
-  return (
-    <WebsitePageWrapper
-      seoProps={{ headerTitle: 'About' }}
-    >
-      <AboutScreen />
-    </WebsitePageWrapper>
-  );
-}
+export default websitePageHOC(AboutScreen, {
+  pageWrapperProps: {
+    seoProps: {
+      headerTitle: 'About',
+    },
+  },
+});
