@@ -1,19 +1,23 @@
 import React from 'react';
-import WebsitePageWrapper from '../../src/components/wrapper/WebsitePage';
+import { websitePageHOC } from '../../src/components/wrapper/WebsitePage/hoc';
 import FAQScreen from '../../src/components/screen/FAQScreen';
 
 // eslint-disable-next-line react/prop-types
-export default function FAQPage({ faqCategories }) {
+export function FAQPage({ faqCategories }) {
   return (
-    <WebsitePageWrapper
-      seoProps={{ headerTitle: 'FAQ' }}
-    >
-      <FAQScreen
-        faqCategories={faqCategories}
-      />
-    </WebsitePageWrapper>
+    <FAQScreen
+      faqCategories={faqCategories}
+    />
   );
 }
+
+export default websitePageHOC(FAQPage, {
+  pageWrapperProps: {
+    seoProps: {
+      headerTitle: 'FAQ',
+    },
+  },
+});
 
 export async function getStaticProps() {
   const faqCategories = await fetch('https://instalura-api.vercel.app/api/content/faq')
