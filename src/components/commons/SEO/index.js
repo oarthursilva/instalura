@@ -2,11 +2,11 @@ import React from 'react';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
-export function SEO({ headerTitle }) {
-  const hasHeaderTitle = Boolean(headerTitle);
+export function SEO({ headTitle }) {
+  const hasHeadTitle = Boolean(headTitle);
   const baseTitle = 'Instalura Bootcamp JAMStack';
-  const title = hasHeaderTitle
-    ? `${headerTitle} | ${baseTitle}`
+  const title = hasHeadTitle
+    ? `${headTitle} | ${baseTitle}`
     : baseTitle;
 
   const description = 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!';
@@ -36,9 +36,9 @@ export function SEO({ headerTitle }) {
 }
 
 SEO.propTypes = {
-  headerTitle: PropTypes.string,
+  headTitle: PropTypes.string,
 };
 
 SEO.defaultProps = {
-  headerTitle: '',
+  headTitle: '',
 };

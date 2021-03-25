@@ -12,7 +12,7 @@ export function Login() {
 export default websitePageHOC(Login, {
   pageWrapperProps: {
     seoProps: {
-      headerTitle: 'Login',
+      headTitle: 'Login',
     },
     menuProps: {
       display: false,

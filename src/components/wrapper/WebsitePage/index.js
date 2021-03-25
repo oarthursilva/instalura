@@ -68,7 +68,7 @@ export default function WebsitePageWrapper({
 
 WebsitePageWrapper.propTypes = {
   seoProps: PropTypes.shape({
-    headerTitle: PropTypes.string,
+    headTitle: PropTypes.string,
   }),
   menuProps: PropTypes.shape({
     display: PropTypes.bool,
@@ -83,7 +83,7 @@ WebsitePageWrapper.propTypes = {
 
 WebsitePageWrapper.defaultProps = {
   seoProps: {
-    headerTitle: '',
+    headTitle: '',
   },
   menuProps: {
     display: true,
