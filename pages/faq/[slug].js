@@ -39,7 +39,7 @@ export async function getStaticProps({ params }) {
     }
     return accumulate;
   }, {});
-console.log(data);
+
   return {
     props: {
       category: data.category,
