@@ -4,7 +4,7 @@ import { websitePageHOC } from '../src/components/wrapper/WebsitePage/hoc';
 export default websitePageHOC(HomeScreen, {
   pageWrapperProps: {
     seoProps: {
-      headerTitle: 'Home',
+      headTitle: 'Home',
     },
   },
 });

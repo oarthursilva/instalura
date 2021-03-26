@@ -14,7 +14,7 @@ export function FAQPage({ faqCategories }) {
 export default websitePageHOC(FAQPage, {
   pageWrapperProps: {
     seoProps: {
-      headerTitle: 'FAQ',
+      headTitle: 'FAQ',
     },
   },
 });
