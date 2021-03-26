@@ -9,8 +9,8 @@ export function SEO({ headTitle }) {
     ? `${headTitle} | ${baseTitle}`
     : baseTitle;
 
-  const description = 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!';
-  const image = 'https://www.alura.com.br/assets/img/alura-share.1571848411.png';
+  const description = 'Pronto para saber da vida dos outros? Entre já e fique sabendo tudo que está rolando no seu bairro e no mundo!';
+  const image = 'https://instalura-oarthursilva.vercel.app/images/instalura.png';
   const urlBase = 'https://instalura-oarthursilva.vercel.app/';
   return (
     <Head>
