@@ -57,11 +57,6 @@ export function FormLogin() {
   const websitePageContext = useContext(WebsitePageContext);
 
   return (
-  // <Grid.Container
-  //   flex={1}
-  //   display="flex"
-  //   alignItems="center"
-  // >
     <Grid.Row
       flex={1}
       alignItems="center"

@@ -31,7 +31,10 @@ export function Logo({ size }) {
 }
 
 Logo.propTypes = {
-  size: PropTypes.string,
+  size: PropTypes.shape({
+    width: PropTypes.isRequired,
+    height: PropTypes.isRequired,
+  }),
 };
 
 Logo.defaultProps = {
