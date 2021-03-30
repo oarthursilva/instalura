@@ -31,12 +31,9 @@ export function Logo({ size }) {
 }
 
 Logo.propTypes = {
-  size: PropTypes.shape({
-    width: PropTypes.isRequired,
-    height: PropTypes.isRequired,
-  }),
+  size: PropTypes.string,
 };
 
 Logo.defaultProps = {
-  size: sizes.small,
+  size: 'small',
 };
