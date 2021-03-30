@@ -1,10 +1,10 @@
-import LoginScreen from '../../src/components/screen/LoginScreen';
+import ProfileScreen from '../../src/components/screen/ProfileScreen';
 import { websitePageHOC } from '../../src/components/wrapper/WebsitePage/hoc';
 
-export default websitePageHOC(LoginScreen, {
+export default websitePageHOC(ProfileScreen, {
   pageWrapperProps: {
     seoProps: {
-      headTitle: 'Login',
+      headTitle: 'Profile',
     },
     menuProps: {
       display: false,
