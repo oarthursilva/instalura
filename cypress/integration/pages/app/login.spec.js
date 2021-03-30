@@ -12,6 +12,6 @@ describe('/pages/app/login', () => {
     cy.get('#formRegister button[type="submit"]').click();
 
     // fill form and navigate to profile page at /app/profile
-    cy.url().should('include', '/app/profile')
-  })
-})
+    cy.url().should('include', '/app/profile');
+  });
+});
