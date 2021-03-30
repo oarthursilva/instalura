@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Logo } from '../../../theme/Logo';
 
 import { Button } from '../Button';
+import { Link } from '../Link';
+
 import { Text } from '../../foundation/Text';
+import { Logo } from '../../../theme/Logo';
 
 import { MenuWrapper } from './styles';
 
@@ -26,7 +28,13 @@ export function Menu({ onRegisterClick }) {
   return (
     <MenuWrapper>
       <MenuWrapper.LeftSide>
-        <Logo />
+
+        <Link
+          href="/"
+          color="secondary.main"
+        >
+          <Logo />
+        </Link>
       </MenuWrapper.LeftSide>
 
       <MenuWrapper.CentralSide>

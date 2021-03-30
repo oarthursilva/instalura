@@ -12,6 +12,9 @@ export const Grid = {
     margin-left: auto;
    
     ${propToStyle('flex')}
+    ${propToStyle('display')}
+    ${propToStyle('alignItems')}
+
     ${propToStyle('marginTop')}
 
     ${breakpointsMedia({
