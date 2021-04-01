@@ -24,6 +24,9 @@ export const loginService = {
         password,
       },
     })
-      .then((data) => data);
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
   },
 };
