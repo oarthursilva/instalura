@@ -67,11 +67,11 @@ jobs:
         run: yarn install
 
       # Run unit test
-      - name: Run Unit Test with Coverage (jest --coverage)
+      - name: Run Unit Tests
         run: yarn test
 
   sonarcloud:
-    name: Sonar Cloud
+    name: Sonar Cloud (analysis)
     runs-on: ubuntu-latest
 
     steps:
@@ -80,6 +80,14 @@ jobs:
         with:
           # Disabling shallow clone is recommended for improving relevancy of reporting
           fetch-depth: 0
+
+      # Install dependencies
+      - name: Install project dependencies
+        run: yarn install
+
+      # Run unit test
+      - name: Run Unit Test with Coverage (jest --coverage)
+        run: yarn test:coverage
 
       # Run SonarCloud scan for static code check
       - name: Scan
