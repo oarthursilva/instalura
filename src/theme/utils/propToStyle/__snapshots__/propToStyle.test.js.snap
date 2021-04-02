@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`propToStype() when propToStyle receives an argument with breakpoint render only a single breakpoint resolution 1`] = `
+Array [
+  "@media only screen and (min-width:",
+  "0",
+  "px){",
+  "text-align: center;",
+  ";}",
+]
+`;
+
+exports[`propToStype() when propToStyle receives an argument with breakpoints render multiple breakpoints resolutions 1`] = `
+Array [
+  "@media only screen and (min-width:",
+  "0",
+  "px){",
+  "text-align: center;",
+  ";}",
+  "@media only screen and (min-width:",
+  "768",
+  "px){",
+  "text-align: center;",
+  ";}",
+]
+`;
