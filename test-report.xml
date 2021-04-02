@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="C:\Users\I518644\git\afuscella\instalura\config\headers.test.js">
+    <testCase name="config/headers when headers is requested should match the static def" duration="4"/>
+    <testCase name="config/headers when headers is requested should match the snapshot" duration="3"/>
+  </file>
+  <file path="C:\Users\I518644\git\afuscella\instalura\config\redirects.test.js">
+    <testCase name="config/redirects when redirect is requested should match static def" duration="4"/>
+    <testCase name="config/redirects when redirect is requrest should match the snapshot" duration="3"/>
+  </file>
+  <file path="C:\Users\I518644\git\afuscella\instalura\src\theme\utils\propToStyle\propToStyle.test.js">
+    <testCase name="propToStype() when propToStyle receives an sample argument and it is a string, should convert to style" duration="3"/>
+    <testCase name="propToStype() when propToStyle receives an sample argument and it is a number, should convert to style" duration="1"/>
+    <testCase name="propToStype() when propToStyle receives an argument with breakpoint render only a single small breakpoint resolution" duration="3"/>
+    <testCase name="propToStype() when propToStyle receives an argument with breakpoint render only a single large breakpoint resolution" duration="0"/>
+    <testCase name="propToStype() when propToStyle receives an argument with breakpoints render multiple breakpoints resolutions" duration="0"/>
+  </file>
+</testExecutions>

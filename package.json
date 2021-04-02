@@ -9,7 +9,8 @@
     "custom-scripts": "node ./scripts/lint.js",
     "lint:fix": "eslint ./ --fix",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "jest --coverage",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:integration:open": "cypress open",
     "test:integration": "cypress run --headless"
