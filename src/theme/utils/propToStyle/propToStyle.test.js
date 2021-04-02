@@ -22,10 +22,19 @@ describe('propToStype()', () => {
   });
 
   describe('when propToStyle receives an argument with breakpoint', () => {
-    test('render only a single breakpoint resolution', () => {
+    test('render only a single small breakpoint resolution', () => {
       const propToStyleResult = propToStyle('textAlign');
       // <Text textAlign={{ xs: 'center' }}" />
       const componentProps = { textAlign: { xs: 'center' } }; // object
+      const styleResult = propToStyleResult(componentProps);
+
+      expect(styleResult).toMatchSnapshot();
+    });
+
+    test('render only a single large breakpoint resolution', () => {
+      const propToStyleResult = propToStyle('textAlign');
+      // <Text textAlign={{ xl: 'center' }}" />
+      const componentProps = { textAlign: { xl: 'center' } }; // object
       const styleResult = propToStyleResult(componentProps);
 
       expect(styleResult).toMatchSnapshot();
@@ -35,8 +44,8 @@ describe('propToStype()', () => {
   describe('when propToStyle receives an argument with breakpoints', () => {
     test('render multiple breakpoints resolutions', () => {
       const propToStyleResult = propToStyle('textAlign');
-      // <Text textAlign={{ xs: 'center', md: 'center' }}" />
-      const componentProps = { textAlign: { xs: 'center', md: 'center' } }; // object
+      // <Text textAlign={{ sm: 'center', md: 'center', lg: 'center' }}" />
+      const componentProps = { textAlign: { sm: 'center', md: 'left', lg: 'center' } }; // object
       const styleResult = propToStyleResult(componentProps);
 
       expect(styleResult).toMatchSnapshot();
