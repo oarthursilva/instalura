@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`config/headers when headers is requested should match the snapshot 1`] = `
+Array [
+  Object {
+    "headers": Array [
+      Object {
+        "key": "X-Frame-Options",
+        "value": "DENY",
+      },
+    ],
+    "source": "/app/:path*/",
+  },
+]
+`;
