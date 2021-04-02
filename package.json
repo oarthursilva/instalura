@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "commit": "cz",
-    "custom-scripts": "node ./scripts/test.js",
+    "custom-scripts": "node ./scripts/lint.js",
     "lint:fix": "eslint ./ --fix",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "jest",
