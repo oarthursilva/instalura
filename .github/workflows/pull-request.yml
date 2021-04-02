@@ -66,8 +66,8 @@ jobs:
       - name: Install project dependencies
         run: yarn install
 
-      # Run linter
-      - name: Run Unit Test (jest)
+      # Run unit test
+      - name: Run Unit Test with Coverage (jest --coverage)
         run: yarn test
 
   sonarcloud:
