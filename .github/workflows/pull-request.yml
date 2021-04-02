@@ -41,35 +41,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Display Diff Files
         run: yarn custom-scripts
-
-  tests:
-    name: Tests
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-        uses: actions/checkout@v2.3.4
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.16.0'
-
-      # Show node version
-      - name: Node Version
-        run: node -v
-
-      # Install dependencies
-      - name: Install project dependencies
-        run: yarn install
-
-      # Run linter
-      - name: Run Integration Test
-        run: yarn test:integration
-  
+ 
   sonarcloud:
     name: Sonar Cloud
     runs-on: ubuntu-latest
