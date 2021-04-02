@@ -41,7 +41,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Display Diff Files
         run: yarn custom-scripts
-  
+ 
   sonarcloud:
     name: Sonar Cloud
     runs-on: ubuntu-latest

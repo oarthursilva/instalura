@@ -1,4 +1,5 @@
 import { destroyCookie, setCookie } from 'nookies';
+import { isStagingEnv } from '../../infra/env/isStagingEnv';
 
 async function HttpClient(url, { headers, body, ...options }) {
   return fetch(url, {
@@ -17,9 +18,17 @@ async function HttpClient(url, { headers, body, ...options }) {
     });
 }
 
+const BASE_URL = isStagingEnv
+  // Backend DEV
+  ? 'https://instalura-api-git-master-omariosouto.vercel.app'
+  // Backend Production
+  : 'https://instalura-api.vercel.app';
+
+console.log('Running on', isStagingEnv ? 'Staging' : 'Production');
+
 export const loginService = {
   async login({ username, password }) {
-    return HttpClient('https://instalura-api.vercel.app/api/login', {
+    return HttpClient(`${BASE_URL}/api/login`, {
       method: 'POST',
       body: {
         username,
