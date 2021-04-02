@@ -9,7 +9,7 @@
     "custom-scripts": "node ./scripts/lint.js",
     "lint:fix": "eslint ./ --fix",
     "lint": "eslint --ignore-path .gitignore .",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "test:integration:open": "cypress open",
     "test:integration": "cypress run --headless"
@@ -44,7 +44,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^5.1.3",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.4",
+    "jest-sonar-reporter": "^2.0.0"
   },
   "config": {
     "commitizen": {
