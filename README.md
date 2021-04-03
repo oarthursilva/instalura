@@ -1,4 +1,10 @@
-# Example app with styled-components
+![GitHub Actions CI Status](https://github.com/afuscella/instalura/actions/workflows/main.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=afuscella_instalura&metric=alert_status)](https://sonarcloud.io/dashboard?id=afuscella_instalura)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=afuscella_instalura&metric=bugs)](https://sonarcloud.io/dashboard?id=afuscella_instalura)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=afuscella_instalura&metric=code_smells)](https://sonarcloud.io/dashboard?id=afuscella_instalura)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=afuscella_instalura&metric=coverage)](https://sonarcloud.io/dashboard?id=afuscella_instalura)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=afuscella_instalura&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=afuscella_instalura)
+# Instalura
 
 This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
 
@@ -76,4 +82,3 @@ export default () => (
 ```
 
 </details>
-
