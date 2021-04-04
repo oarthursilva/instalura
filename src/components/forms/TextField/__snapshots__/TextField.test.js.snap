@@ -23,3 +23,13 @@ exports[`<TextField /> render component 1`] = `
   value="test value"
 />
 `;
+
+exports[`<TextField /> render component 2`] = `
+<input
+  class="styles__TextBase-e550oo-0 dNPjoD styles__InputBase-vdjv3h-0 jjPbsG"
+  name="testname"
+  placeholder="test placeholder"
+  type="text"
+  value="test value"
+/>
+`;
