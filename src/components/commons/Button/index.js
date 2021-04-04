@@ -57,11 +57,13 @@ const ButtonBase = styled.button`
 export function Button({ href, children, ...props }) {
   const hasHref = Boolean(href);
   const componentTag = hasHref ? Link : 'button';
+  const role = hasHref ? 'link' : 'button';
 
   return (
     <ButtonBase
       as={componentTag}
       href={href}
+      role={role}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
