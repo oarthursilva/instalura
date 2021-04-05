@@ -5,7 +5,7 @@ export const LinkWrapper = styled.a`
   color: inherit;
   ${({ theme, color }) => (color
     ? `color: ${get(theme, `colors.${color}.color`)}`
-    : 'color: inherit;')}
+    : 'color: inherit;')};
   text-decoration: none;
   opacity: 1;
   transition: opacity ${({ theme }) => theme.transition};
