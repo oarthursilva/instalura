@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<TextField /> render component 1`] = `
+exports[`<TextField /> when component input it is not valid should display a feedback message at bottom 1`] = `
 .c0 {
   font-size: 16px;
   font-weight: 400;
@@ -13,23 +13,20 @@ exports[`<TextField /> render component 1`] = `
   padding: 12px 16px;
   outline: 0;
   border-radius: 12px;
+  border-color: #dc3545;
+}
+
+.c1 + span {
+  color: #dc3545;
+  font-size: 11px;
 }
 
 <input
   class="c0 c1"
   name="testname"
   placeholder="test placeholder"
+  role="textbox"
   type="text"
-  value="test value"
-/>
-`;
-
-exports[`<TextField /> render component 2`] = `
-<input
-  class="styles__TextBase-e550oo-0 dNPjoD styles__InputBase-vdjv3h-0 jjPbsG"
-  name="testname"
-  placeholder="test placeholder"
-  type="text"
-  value="test value"
+  value="test@value"
 />
 `;
