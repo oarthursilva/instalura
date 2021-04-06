@@ -24,6 +24,8 @@ export function TextField({
         name={name}
         onChange={onChange}
         value={value}
+        isFieldInvalid={isFieldInvalid}
+        role="textbox"
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
       />
