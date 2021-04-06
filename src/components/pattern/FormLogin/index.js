@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import * as yup from 'yup';
 
@@ -19,7 +20,7 @@ const loginSchema = yup.object().shape({
     .required('"Senha" é obrigatório'),
 });
 
-export function FormLogin() {
+export function FormLogin({ onSubmit }) {
   const router = useRouter();
   const initialValues = {
     username: '',
@@ -50,7 +51,7 @@ export function FormLogin() {
   });
 
   return (
-    <form id="formRegister" onSubmit={form.handleSubmit}>
+    <form id="formRegister" onSubmit={onSubmit || form.handleSubmit}>
       <TextField
         placeholder="Usuário"
         name="username"
@@ -87,3 +88,11 @@ export function FormLogin() {
     </form>
   );
 }
+
+FormLogin.propTypes = {
+  onSubmit: PropTypes.func,
+};
+
+FormLogin.defaultProps = {
+  onSubmit: undefined,
+};
