@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import { useRouter } from 'next/router';
 import * as yup from 'yup';
@@ -27,12 +28,20 @@ export function FormLogin() {
   const form = useForm({
     initialValues,
     onSubmit: async (values) => {
+      form.setIsFormDisabled(true);
       await loginService.login({
         username: values.username,
         password: values.password,
       })
         .then(() => {
           router.push('/app/profile/');
+        })
+        .catch((err) => {
+          // challenge, display message on popup
+          console.error(err);
+        })
+        .finally(() => {
+          form.setIsFormDisabled(false);
         });
     },
     async validateSchema(values) {
