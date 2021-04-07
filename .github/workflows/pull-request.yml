@@ -24,14 +24,6 @@ jobs:
       - name: Node Version
         run: node -v
 
-      # Runs a set of commands using the runners shell
-      - name: Display Diff Files
-        run: yarn custom-scripts
-
-      # Run linter
-      - name: Run Linter (eslint)
-        run: yarn lint
-
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -43,6 +35,14 @@ jobs:
       # Install modules using locals
       - name: Install Packages
         run: yarn --prefer-offline
+
+      # Runs a set of commands using the runners shell
+      - name: Display Diff Files
+        run: yarn custom-scripts
+
+      # Run linter
+      - name: Run Linter (eslint)
+        run: yarn lint
 
       # Run unit test
       - name: Run Unit Test with Coverage (jest --coverage)
