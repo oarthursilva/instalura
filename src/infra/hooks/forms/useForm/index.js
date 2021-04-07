@@ -8,27 +8,34 @@ export function useForm({
   const [errors, setErrors] = useState({});
   const [touchedFields, setTouchedFields] = useState({});
 
+  function formatErrors(yupErrors = []) {
+    return yupErrors.reduce((errorObjectAcc, currentError) => {
+      const fieldName = currentError.path;
+      const errorMessage = currentError.message;
+      return {
+        ...errorObjectAcc,
+        [fieldName]: errorMessage,
+      };
+    }, {});
+  }
+
   async function validateValues(currentValues) {
     try {
       await validateSchema(currentValues);
       setErrors({});
       setIsFormDisabled(false);
     } catch (err) {
-      const formattedErrors = err.inner.reduce((errorObjectAcc, currentError) => {
-        const fieldName = currentError.path;
-        const errorMessage = currentError.message;
-        return {
-          ...errorObjectAcc,
-          [fieldName]: errorMessage,
-        };
-      }, {});
+      const formattedErrors = formatErrors(err.inner);
       setErrors(formattedErrors);
       setIsFormDisabled(true);
     }
   }
 
   useEffect(() => {
-    validateValues(values);
+    validateValues(values)
+      .catch((err) => {
+        console.log(err);
+      });
   }, [values]);
 
   return {
