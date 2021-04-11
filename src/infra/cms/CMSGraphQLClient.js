@@ -1,10 +1,15 @@
 import { GraphQLClient, gql as GraphQLTag } from 'graphql-request';
+import PropTypes from 'prop-types';
 
 export const gql = GraphQLTag;
 
-export function CMSGraphQLClient(GraphQLClientModule = GraphQLClient) {
+export function CMSGraphQLClient(
+  { preview } = { preview: false }, GraphQLClientModule = GraphQLClient,
+) {
+  const DatoCMSURL = preview
+    ? 'https://graphql.datocms.com/preview'
+    : 'https://graphql.datocms.com/';
   const TOKEN = process.env.DATO_CMS_TOKEN;
-  const DatoCMSURL = 'https://graphql.datocms.com/';
   const client = new GraphQLClientModule(DatoCMSURL, {
     headers: {
       Authorization: `Bearer ${TOKEN}`,
@@ -26,3 +31,7 @@ export function CMSGraphQLClient(GraphQLClientModule = GraphQLClient) {
     },
   };
 }
+
+CMSGraphQLClient.propTypes = {
+  preview: PropTypes.bool,
+};
