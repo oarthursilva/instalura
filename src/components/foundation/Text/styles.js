@@ -49,5 +49,5 @@ export const TextBase = styled.span`
 
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
 
-  ${({ variant }) => TextStyleVariantMap[variant]}
+  ${({ variant }) => TextStyleVariantMap[variant]};
 `;
