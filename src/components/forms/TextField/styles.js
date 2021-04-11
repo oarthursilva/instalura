@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Text } from '../../foundation/Text';
+import { Input } from '../../foundation/Input';
 
-export const InputBase = styled(Text)`
+export const InputBase = styled(Input)`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors.tertiary.light.color};
   padding: 12px 16px;
