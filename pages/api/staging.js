@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default function staging(req, res) {
   res.setPreviewData({});
 
   const KEY = 'BIRDMAN';

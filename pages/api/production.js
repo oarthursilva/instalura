@@ -1,4 +1,4 @@
-export default function handler(req, res) {
+export default function production(req, res) {
   res.clearPreviewData();
 
   res.writeHead(307, { location: '/' });
