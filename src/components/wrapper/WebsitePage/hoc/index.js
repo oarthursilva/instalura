@@ -13,6 +13,7 @@ export function websitePageHOC(PageComponent,
       <WebsitePageWrapper
         {...pageWrapperProps}
         {...props.pageWrapperProps}
+        messages={props.messages}
       >
         <PageComponent {...props} />
       </WebsitePageWrapper>
