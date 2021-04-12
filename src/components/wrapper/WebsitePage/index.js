@@ -1,4 +1,5 @@
-import React, { createContext, useState } from 'react';
+import React, { useState } from 'react';
+import get from 'lodash/get';
 import PropTypes from 'prop-types';
 
 import { Footer } from '../../commons/Footer';
@@ -8,12 +9,12 @@ import { Box } from '../../foundation/layout/Container';
 import { FormRegister } from '../../pattern/FormRegister';
 import { SEO } from '../../commons/SEO';
 
-export const WebsitePageContext = createContext({
-  toggleModalRegister: () => { },
-});
+import { WebsitePageContext } from './context';
+
+export { WebsitePageContext } from './context';
 
 export default function WebsitePageWrapper({
-  children, seoProps, menuProps, pageBoxProps,
+  children, seoProps, menuProps, pageBoxProps, messages,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
@@ -22,6 +23,7 @@ export default function WebsitePageWrapper({
         toggleModalRegister: () => {
           setIsModalOpen(!isModalOpen);
         },
+        getCMSContent: (cmsKey) => get(messages, cmsKey),
       }}
     >
       <SEO
@@ -78,6 +80,8 @@ WebsitePageWrapper.propTypes = {
     backgroundRepeat: PropTypes.string,
     backgroundPosition: PropTypes.string,
   }),
+  // eslint-disable-next-line react/forbid-prop-types
+  messages: PropTypes.object,
   children: PropTypes.node.isRequired,
 };
 
@@ -93,4 +97,5 @@ WebsitePageWrapper.defaultProps = {
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'bottom right',
   },
+  messages: {},
 };

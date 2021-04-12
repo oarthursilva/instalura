@@ -9,7 +9,7 @@ const BASE_URL = isStagingEnv
   // Backend Production
   : 'https://instalura-api.vercel.app';
 
-console.log('Running on', isStagingEnv ? 'Staging' : 'Production');
+console.log('Running loginService on', isStagingEnv ? 'Staging' : 'Production');
 
 export const loginService = {
   async login({ username, password },
