@@ -38,7 +38,7 @@ export function FormLogin({ onSubmit }) {
           router.push('/app/profile/');
         })
         .catch((err) => {
-          // challenge, display message on popup
+          // challenge, display as a popup
           console.error(err);
         })
         .finally(() => {

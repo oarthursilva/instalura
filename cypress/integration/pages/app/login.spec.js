@@ -1,3 +1,4 @@
+/* eslint-disable cypress/no-unnecessary-waiting */
 /// <reference types="cypress" />
 
 import LoginScreenPageObject from '../../../../src/components/screen/LoginScreen/app/LoginScreen/LoginScreen.pageObject';
@@ -17,13 +18,15 @@ describe('/pages/app/login', () => {
         .submitForm();
 
       // @Assert
-      cy.url().should('include', '/app/profile');
+      cy.url()
+        .should('include', '/app/profile')
+        .wait(5000);
 
       cy.wait('@userLogin')
         .then((intercept) => {
           const { token } = intercept.response.body.data;
           // @Assert
-          cy.getCookie('APP_TOKEN')
+          cy.getCookie('LOGIN_COOKIE_APP_TOKEN')
             .should('exist')
             .should('have.property', 'value', token);
         });
