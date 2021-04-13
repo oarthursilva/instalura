@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '../../foundation/layout/Container';
 import { Grid } from '../../foundation/layout/Grid';
 
-export default function ProfileScreen() {
+export default function ProfileScreen({ ...props }) {
   return (
     <Grid.Container
       flex={1}
@@ -30,6 +30,11 @@ export default function ProfileScreen() {
             marginBottom="37px"
           >
             Página de Profile!
+
+            <pre>
+              {JSON.stringify(props, null, 4)}
+            </pre>
+
             <img
               src="https://media.giphy.com/media/bn0zlGb4LOyo8/giphy.gif"
               alt="Nicolas Cage"

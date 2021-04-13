@@ -30,7 +30,7 @@ describe('loginService', () => {
             password: 'somepassword',
           }, setCookieModule, httpClientModule);
 
-          expect(setCookieModule).toHaveBeenCalledWith(null, 'APP_TOKEN', token, {
+          expect(setCookieModule).toHaveBeenCalledWith(null, 'LOGIN_COOKIE_APP_TOKEN', token, {
             path: '/',
             maxAge: 604800,
           });
@@ -57,9 +57,9 @@ describe('loginService', () => {
     describe('when user try to logout and succeed', () => {
       test('remove its token', async () => {
         const destroyCookieModule = jest.fn();
-        await loginService.logout(destroyCookieModule);
+        await loginService.logout(null, destroyCookieModule);
 
-        expect(destroyCookieModule).toHaveBeenCalledWith(null, 'APP_TOKEN');
+        expect(destroyCookieModule).toHaveBeenCalledWith(null, 'LOGIN_COOKIE_APP_TOKEN', { path: '/' });
       });
     });
   });

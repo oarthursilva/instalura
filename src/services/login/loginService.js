@@ -1,7 +1,9 @@
 import { destroyCookie, setCookie } from 'nookies';
 import { isStagingEnv } from '../../infra/env/isStagingEnv';
 
-import { HttpClient } from '../http/httpClient';
+import { HttpClient } from '../../infra/http/httpClient';
+
+export const LOGIN_COOKIE_APP_TOKEN = 'LOGIN_COOKIE_APP_TOKEN';
 
 const BASE_URL = isStagingEnv
   // Backend DEV
@@ -31,7 +33,7 @@ export const loginService = {
           throw new Error('Fail to login with credentials provided.');
         }
         const DAY_IN_SECONDS = 86400;
-        setCookieModule(null, 'APP_TOKEN', token, {
+        setCookieModule(null, LOGIN_COOKIE_APP_TOKEN, token, {
           path: '/',
           maxAge: DAY_IN_SECONDS * 7,
         });
@@ -42,7 +44,7 @@ export const loginService = {
       });
   },
 
-  async logout(destroyCookieModule = destroyCookie) {
-    destroyCookieModule(null, 'APP_TOKEN');
+  async logout(ctx, destroyCookieModule = destroyCookie) {
+    destroyCookieModule(ctx, LOGIN_COOKIE_APP_TOKEN, { path: '/' });
   },
 };
