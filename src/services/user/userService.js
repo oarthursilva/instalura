@@ -25,7 +25,6 @@ export const userService = {
         posts: response.data,
       };
     } catch (err) {
-      console.log('error', err);
       throw new Error('Not able to retrieve user posts');
     }
   },
