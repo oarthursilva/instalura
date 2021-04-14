@@ -1,8 +1,12 @@
 import React from 'react';
+import { useUserService } from '../../../infra/hooks/services/useUserService';
 import { Box } from '../../foundation/layout/Container';
 import { Grid } from '../../foundation/layout/Grid';
 
-export default function ProfileScreen({ ...props }) {
+export default function ProfileScreen() {
+  const { getProfilePage } = useUserService();
+  const profile = getProfilePage();
+
   return (
     <Grid.Container
       flex={1}
@@ -31,9 +35,14 @@ export default function ProfileScreen({ ...props }) {
           >
             Página de Profile!
 
-            <pre>
+            {/* <pre>
               {JSON.stringify(props, null, 4)}
-            </pre>
+            </pre> */}
+            {profile.loading && (
+              <p>loading</p>)}
+            {!profile.loading && !profile.error && (
+              <p>Data loaded</p>
+            )}
 
             <img
               src="https://media.giphy.com/media/bn0zlGb4LOyo8/giphy.gif"
